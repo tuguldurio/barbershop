@@ -1,8 +1,10 @@
 <template>
-  <div class="container mx-auto my-8">
-    <Type v-if="step===0" @next="nextToScheduler" />
-    <Scheduler v-if="step===1" @back="backToType" @next="nextToInfo" :firstStep="this.$route.query.type ? true : false" />
-    <Info v-if="step===2" @back="backToScheduler" @submitInfo="submit" />
+  <div class="container mx-auto">
+    <div class="w-11/12 sm:max-w-3xl mx-auto my-8 p-8 shadow">
+      <Type v-if="step===0" @next="nextToScheduler" />
+      <Scheduler v-if="step===1" @back="backToType" @next="nextToInfo" :firstStep="this.$route.query.type ? true : false" />
+      <Info v-if="step===2" @back="backToScheduler" @submitInfo="submit" />
+    </div>
   </div>
 </template>
 

@@ -21,6 +21,7 @@ class Available(Resource):
         dates = list(db.get_collection('bookings').find({'booking': None}, {'_id': 0}))
         for date in dates:
             date['date'] = date['date'].isoformat()
+
         return {'dates': dates}
 
 @api.route('/make')

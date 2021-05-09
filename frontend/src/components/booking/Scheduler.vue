@@ -1,5 +1,5 @@
 <template>
-  <div class="w-11/12 md:w-168 h-168 md:h-96 mx-auto flex flex-col md:flex-row md:divide-x divide-black divide-opacity-10 select-none">
+  <div class="w-full h-168 md:h-96 mx-auto flex flex-col md:flex-row md:divide-x divide-black divide-opacity-10 select-none">
     <div class="w-full md:w-1/2 h-1/2 md:h-full pt-2 flex flex-col">
       <div class="flex items-center justify-center">
         <svg class="w-8 cursor-pointer transform scale-100" @click="prevMonth" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -33,7 +33,7 @@
     <div class="relative h-44 md:h-auto p-4 space-y-6">
       <p>Which hour would you like to choose?</p>
 
-      <select v-model="selectedHour">
+      <select v-model="selectedHour" class="p-2 text-xl focus:outline-none">
         <option value="null" disabled>Select hour</option>
         <template v-for="avail in available" :key="avail.format('YYYY:MM:DD')">
           <option v-if="selectedDay && avail.format('YYYY:MM:DD') == selectedDay.format('YYYY:MM:DD')">
@@ -90,7 +90,7 @@ export default {
     async fetchAvailableDates() {
       const res = await axios.get('/api/bookings/available')
       res.data.dates.forEach(e => {
-        this.available.push(moment.utc(e.date, 'YYYY-MM-DD HH:mm').local())
+        this.available.push(moment(e.date, 'YYYY-MM-DD HH:mm'))
       })
     },
     getDaysInMonth() {

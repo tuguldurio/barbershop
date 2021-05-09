@@ -1,6 +1,6 @@
 <template>
   <div> 
-    <div id="hero1" class="relative overflow-hidden h-screen bg-cover bg-center-left bg-no-repeat">
+    <div id="hero1" class="relative overflow-hidden h-screen-real bg-cover bg-center-left bg-no-repeat">
       <div class="relative h-full w-full bg-main-900 bg-opacity-50">
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <h1 class="text-white uppercase text-4xl lg:text-6xl text-center font-fira font-bold">Great Haircut<br> Great Service</h1>

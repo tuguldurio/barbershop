@@ -1,5 +1,5 @@
 <template>
-  <div class="w-11/12 md:w-144 mx-auto">
+  <div class="w-full mx-auto">
     <form @submit.prevent="submit">
       <div>
         <label class="block">Name:</label>

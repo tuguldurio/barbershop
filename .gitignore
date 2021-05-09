@@ -3,6 +3,8 @@
 *.pyc
 __pycache__/
 migrations/
+venv/
 
 dist/
 node_modules/
+package-lock.json

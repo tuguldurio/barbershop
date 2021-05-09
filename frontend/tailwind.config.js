@@ -9,6 +9,9 @@ module.exports = {
       width: {
         '1/7': '14.2857143%',
       },
+      height: theme => ({
+        "screen-real": `calc(100vh - ${theme('spacing.16')})`,
+      }),
       colors: { 
         gray: colors.trueGray,
         purple: {
@@ -65,7 +68,7 @@ module.exports = {
     container: {
       screens: {
          sm: "100%",
-         md: "100%",
+         md: "768px",
          lg: "1024px",
          xl: "1280px"
       }

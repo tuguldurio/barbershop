@@ -133,7 +133,7 @@ export default {
       this.addedHours = []
       res.data.dates.forEach(e => {
         this.addedHours.push({
-          date: moment.utc(e.date).local().format('hh:mm A'),
+          date: moment(e.date).format('hh:mm A'),
           booked: e.booked
         })
       })

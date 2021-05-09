@@ -20,4 +20,4 @@ jwt = JWTManager(app)
 app.register_blueprint(api1)
 
 if __name__ == '__main__':
-    app.run(debug=False, host="192.168.0.235", port=8000, use_reloader=True)
+    app.run(debug=False, host="0.0.0.0", port=8000, use_reloader=True)
